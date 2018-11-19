@@ -1,0 +1,29 @@
+/*
+Theme Name:     Rational Start Child Theme
+Theme URI:      http://www.jpurpleman.ca
+Description:    Rational-start child theme.
+Author:         Jonathan Perlman
+Author URI:     http://www.jpurpleman.ca
+Template:       rational-start
+Version:        0.1.0
+*/
+
+article .more-link {
+  position: static;
+}
+
+header.site .h3 {
+font-size:2em;
+}
+
+#text-4 img {
+border:5px solid #fff; 
+margin-bottom:20px;
+-webkit-box-shadow: 2px 2px 20px 0px rgba(0,0,0,0.6);
+-moz-box-shadow: 2px 2px 20px 0px rgba(0,0,0,0.6);
+box-shadow: 2px 2px 20px 0px rgba(0,0,0,0.6);
+}
+
+.hentry p {
+line-height:1.7;
+}
