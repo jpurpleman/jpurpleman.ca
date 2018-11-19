@@ -1,0 +1,120 @@
+.gallery {
+	@include make-row();
+	
+	&.gallery-columns-2, &.gallery-columns-3, &.gallery-columns-4,
+	&.gallery-columns-5, &.gallery-columns-6, &.gallery-columns-7,
+	&.gallery-columns-8, &.gallery-columns-9 {
+		figure {
+			@include box-sizing;
+			@include make-xs-column(6);
+			
+			&:nth-child(2n+1) {
+				clear: both;
+			}
+		}
+	}
+}
+@media screen and (min-width: ($screen-sm-min / 2)) {
+	.gallery {
+		&.gallery-columns-3, &.gallery-columns-4, &.gallery-columns-5,
+		&.gallery-columns-6, &.gallery-columns-7, &.gallery-columns-8,
+		&.gallery-columns-9 {
+			figure {
+				@include make-xs-column(4);
+			
+				&:nth-child(2n+1) {
+					clear: none;
+				}
+				&:nth-child(3n+1) {
+					clear: both;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $screen-sm-min) {
+	.gallery {
+		&.gallery-columns-4, &.gallery-columns-5, &.gallery-columns-6,
+		&.gallery-columns-7, &.gallery-columns-8, &.gallery-columns-9 {
+			figure {
+				@include make-xs-column(3);
+			
+				&:nth-child(3n+1) {
+					clear: none;
+				}
+				&:nth-child(4n+1) {
+					clear: both;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $screen-md-min) {
+	.gallery {
+		&.gallery-columns-5 {
+			figure {
+				@include make-xs-column(2.4);
+			
+				&:nth-child(4n+1) {
+					clear: none;
+				}
+				&:nth-child(5n+1) {
+					clear: both;
+				}
+			}
+		}
+		&.gallery-columns-6, &.gallery-columns-7,
+		&.gallery-columns-8, &.gallery-columns-9 {
+			figure {
+				@include make-xs-column(2);
+			
+				&:nth-child(4n+1) {
+					clear: none;
+				}
+				&:nth-child(6n+1) {
+					clear: both;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $screen-lg-min) {
+	.gallery {
+		&.gallery-columns-7 {
+			figure {
+				@include make-xs-column(1.714);
+			
+				&:nth-child(6n+1) {
+					clear: none;
+				}
+				&:nth-child(7n+1) {
+					clear: both;
+				}
+			}
+		}
+		&.gallery-columns-8 {
+			figure {
+				@include make-xs-column(1.5);
+			
+				&:nth-child(6n+1) {
+					clear: none;
+				}
+				&:nth-child(8n+1) {
+					clear: both;
+				}
+			}
+		}
+		&.gallery-columns-9 {
+			figure {
+				@include make-xs-column(1.333);
+			
+				&:nth-child(6n+1) {
+					clear: none;
+				}
+				&:nth-child(9n+1) {
+					clear: both;
+				}
+			}
+		}
+	}
+}

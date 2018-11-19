@@ -1,0 +1,125 @@
+.pagination {
+	font-family: $mono;
+	margin: 1em 0;
+	position: relative;
+	
+	&.pagination-page {
+		@include cf;
+		
+		a {
+			@include btn;
+			@include button-variant($btn-default-bg, $btn-default-color, $btn-default-color);
+			display: block;
+		}
+		li {
+			@include box-sizing;
+			float: left;
+			padding-right: 2.5px;
+			width: 50%;
+			text-align: center;
+			
+			&:nth-child(2) {
+				padding-left: 2.5px;
+				padding-right: 0;
+			}
+		}
+	}
+	&.pagination-comments {
+		@include cf;
+		
+		.next, .prev {
+			@include box-sizing;
+			float: left;
+			position: static;
+			text-align: center;
+			top: auto;
+			width: 50%;
+		}
+		.next {
+			float: right;
+			right: auto;
+		}
+		.page-numbers {
+			display: none;
+			
+			&.prev, &.next {
+				display: block;
+			}
+		}
+	}
+	&.pagination-fallback {
+		@include cf;
+		
+		li {
+			float: left;
+			left: auto;
+			position: static;
+			right: auto;
+			text-align: center;
+			top: auto;
+			width: 50%;
+			
+			&.next {
+				float: right;
+			}
+			
+			a {
+				width: auto;
+			}
+		}
+	}
+	
+	a, .faux-anchor, .status {
+		height: 35px;
+		line-height: 35px;
+		padding: 0 12px;
+	}
+
+	.current, .page-link {
+		display: none;
+	}
+	.first, .last, .next, .previous {
+		position: absolute;
+		top: 0;
+		
+		a {
+			padding: 0;
+			text-align: center;
+			width: 35px;
+		}
+	}
+	.last {
+		right: 0;
+	}
+	.next {
+		right: 35px;
+	}
+	.first {
+		left: 0;
+	}
+	.previous {
+		left: 35px;
+	}
+	.status {
+		display: block;
+		text-align: center;
+	}
+}
+@media screen and (min-width: $screen-sm-min) {
+	.pagination {
+		text-align: center;
+		
+		.current, .page-link {
+			display: inline-block;
+			margin: 0 3px;
+		}
+		.current {
+			background-color: $btn-default-color;
+			@include border-radius(18px);
+			color: $white-base;
+		}
+		.status {
+			display: none;
+		}
+	}
+}

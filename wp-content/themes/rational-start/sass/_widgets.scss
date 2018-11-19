@@ -1,0 +1,254 @@
+.rational-widgets {
+	@include cf;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	
+	.h3 {
+		margin: 1em 0;
+		text-transform: uppercase;
+		
+		&:after {
+			content: $fa-var-angle-down;
+			@include fa-icon;
+			float: right;
+			line-height: 21px;
+			@include transition(transform 0.25s);
+		}
+		&.active:after {
+			@include transform(scaleY(-1));
+		}
+	}
+	input {
+		display: inline-block;
+	}
+	
+	.widget {
+		margin: 0 0 2.5em 0;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+		
+		&.widget_archive, &.widget_categories, &.widget_pages, &.widget_meta,
+		&.widget_recent_comments, &.widget_recent_entries, &.widget_rss,
+		&.widget_nav_menu, &.widget_subpages {
+			ul, ol {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+		}
+		&.widget_archive {
+			a {
+				display: inline-block;
+				line-height: 36px;
+				padding-left: 8px;
+				padding-right: 8px;
+			}
+		}
+		&.widget_calendar, &.widget_categories, &.widget_meta,
+		&.widget_pages, &.widget_rss, &.widget_search,
+		&.widget_nav_menu, &.widget_subpages {
+			a {
+				display: block;
+				padding: 8px;
+			}
+			.h3 a {
+				padding: 0;
+			}
+		}
+		&.widget_archive, &.widget_calendar, &.widget_categories,
+		&.widget_meta, &.widget_pages, &.widget_recent_comments,
+		&.widget_recent_entries, &.widget_rss, &.widget_search,
+		&.widget_text, &.widget_tag_cloud, &.widget_nav_menu,
+		&.widget_subpages {
+			.h3:before {
+				@include fa-icon;
+				margin-right: 8px;
+			}
+		}
+		&.widget_pages, &.widget_nav_menu, &.widget_subpages {
+			.children, .sub-menu {
+				padding-left: $padding-mobile;
+			}
+		}
+		&.widget_categories {
+			a {
+				position: relative;
+			}
+			.h3:before {
+				content: $fa-var-folder-open;
+			}
+			li {
+				position: relative;
+			}
+			
+			.children {
+				padding-left: 0;
+				
+				a {
+					display: block;
+					padding-left: $padding-mobile;
+				}
+			}
+			.popularity {
+				background: rgba(255,255,255,0.5);
+				height: 100%;
+				left: 0;
+				position: absolute;
+				top: 0;
+				@include transition(width 1s);
+				width: 0%;
+				z-index: 0;
+			}
+			.text {
+				position: relative;
+				z-index: 1;
+			}
+		}
+		&.widget_archive .h3:before {
+			content: $fa-var-archive;
+		}
+		&.widget_calendar  {
+			caption {
+				margin-bottom: 5px;
+			}
+			.h3:before {
+				content: $fa-var-calendar;
+			}
+			table {
+				font-size: 0.75em;
+				width: 100%;
+			}
+			td, th {
+				padding: 5px;
+				text-align: center;
+			}
+			
+			#today {
+				background: $color-primary;
+				color: $white-base;
+			}
+		}
+		&.widget_meta .h3:before {
+			content: $fa-var-code;
+		}
+		&.widget_nav_menu, &.widget_pages, &.widget_subpages {
+			.h3:before {
+				content: $fa-var-bars;
+			}
+		}
+		&.widget_pages, &.widget_subpages {
+			& > ul > li {
+				& > .children, & > .sub-menu {
+					font-size: 0.85em;
+				}
+			}
+		}
+		&.widget_nav_menu {
+			& > div > ul > li {
+				& > .children, & > .sub-menu {
+					font-size: 0.85em;
+				}
+			}
+		}
+		&.widget_recent_comments {
+			.h3:before {
+				content: $fa-var-comments;
+			}
+			li {
+				margin: 0.5em 0;
+			}
+		}
+		&.widget_text .h3:before,
+		&.widget_recent_entries .h3:before {
+			content: $fa-var-file-text;
+		}
+		&.widget_rss {
+			a {
+				padding: 0;
+			}
+			.h3	{
+				&:before {
+					content: $fa-var-rss;
+					margin-right: 5px;
+				}
+				a {
+					display: inline;
+				}
+			}
+			li {
+				margin-bottom: $padding-mobile;
+			}
+			
+			.rsswidget img {
+				display: none;
+			}
+		}
+		&.widget_search {
+			.h3:before {
+				content: $fa-var-search;
+			}
+		}
+		&.widget_subpages .h3:after {
+			display: none;
+		}
+		&.widget_tag_cloud .h3:before {
+			content: $fa-var-tags;
+		}
+	}
+}
+.sidebar {
+	.rational-widgets .widget.widget_categories .popularity {
+		background-color: rgba($color-primary, 0.1);
+	}
+}
+@media screen and (min-width: $screen-iphone-max) {
+	.rational-widgets {
+		&.footer, &.top {
+			.col-sm-4:nth-child(3n+1) {
+				clear: both;
+			}
+		}
+	}
+}
+@media screen and (min-width: $screen-sm-min) {
+	.rational-widgets {
+		.h3:after {
+			display: none;
+		}
+
+		.widget.widget_search {
+			input {
+				width: 100%;
+				
+				&.search-submit {
+					margin-top: 5px;
+					top: 0;
+				}
+			}
+			label {
+				display: inline;
+			}
+		}
+	}
+}
+@media screen and (min-width: $screen-ipad-max) {
+	.rational-widgets {
+		.widget.widget_search {
+			input {
+				width: 100%;
+				
+				&.search-submit {
+					margin-top: 0;
+					top: -1px;
+					width: auto;
+				}
+			}
+			label {
+				display: inline-block;
+			}
+		}
+	}
+}

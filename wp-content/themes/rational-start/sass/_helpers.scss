@@ -1,0 +1,61 @@
+.highlight-elements {
+	* {
+		background-color: $opaque-05;
+		border: 1px solid $opaque-05;
+		font-family: $mono;
+		padding: ($padding-mobile / 2);
+	}
+}
+.quiet {
+	color: $text-light;
+}
+.off-screen {
+	height: 1px;
+	left: -1000px;
+	overflow: hidden;
+	position: absolute;
+	text-align: left; 
+	top: -1000px;
+	width: 1px;
+	z-index: 999999;
+	
+	&:focus, &:active, &:hover {
+		height: auto;
+		left: $padding-mobile;
+		outline: none;
+		top: $padding-mobile;
+		width: auto;
+	}
+}
+.screen-reader-text, .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.text-center {
+	text-align: center !important;
+}
+.text-left {
+	text-align: left !important;
+}
+.text-right {
+	text-align: right !important;
+}
+
+@media screen and (max-width: 767px) {
+	.hidden-mobile {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		border: 0;
+	}
+}

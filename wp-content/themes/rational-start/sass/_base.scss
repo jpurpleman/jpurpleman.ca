@@ -1,0 +1,138 @@
+a {
+	color: $color-primary;
+	text-decoration: none;
+}
+blockquote {
+	background-color: $white-dark;
+	border-left: 3px solid $color-primary;
+	@include border-radius(0 $border-radius-base $border-radius-base 0);
+	margin-left: 0;
+	margin-right: 0;
+	padding: $padding-base-vertical $padding-base-horizontal;
+}
+body {
+	background-color: $white-dark;
+	color: $text-base;
+	font-family: $sans;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+	word-break: break-word;
+}
+code, kbd, pre, tt {
+	background: $white-dark;
+	border: 1px solid darken($white-dark, 5%);
+	@include border-radius($border-radius-base);
+	font-family: $mono;
+	padding: 1px 5px 0;
+}
+dd {
+	margin: 0 0 0.5em 25px;
+}
+dt {
+	font-weight: bold;
+}
+embed {
+	max-width: 100%;
+}
+figure {
+	margin-left: 0;
+	margin-right: 0;
+	
+	img {
+		display: block;
+		margin: 0 auto;
+	}
+}
+figcaption {
+	font-size: $font-size-small;
+	font-style: italic;
+	margin-top: $padding-mobile;
+	text-align: center;
+}
+form {
+	margin: 1em 0;
+}
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-weight: normal;
+}
+h1, h2, h3, h4, h5, h6, nav,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	a {
+		color: inherit;
+		display: block;
+	}
+}
+.h1 {
+	font-size: 2em;
+	margin: 0.67em 0
+}
+.h2 {
+	font-size: 1.5em;
+	margin: 0.83em 0;
+}
+.h3 {
+	font-size: 1.17em;
+    margin: 1em 0;
+}
+.h4 {
+	margin: 1.33em 0;
+}
+.h5 {
+	font-size: 0.83em;
+    margin: 1.67em 0;
+}
+.h6 {
+	font-size: 0.67em;
+    margin: 2.33em 0;
+}
+img, .wp-caption {
+	height: auto;
+	max-width: 100%;
+}
+nav {
+	a {
+		padding-bottom: 11px;
+		padding-top: 11px;
+	}
+	ol, ol ol, ul, ul ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+ol, ul {
+	padding-left: 25px;
+	
+	&.list-unstyled {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		
+		ol, ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
+ol ol {
+	list-style: lower-alpha;
+	
+	ol {
+		list-style: upper-roman;
+	}
+}
+pre {
+	direction: ltr;
+	padding: $padding-mobile / 2;
+	white-space: pre;
+	word-break: normal;
+}
+ul ul {
+	list-style: square;
+	
+	ul {
+		list-style: circle;
+	}
+}

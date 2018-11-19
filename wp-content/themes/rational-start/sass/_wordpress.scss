@@ -1,0 +1,20 @@
+.aligncenter, .alignleft, .alignright {
+	display: block;
+	margin: 1em auto;
+}
+.gallery-caption, .wp-caption-text {
+	font-size: $font-size-small;
+	font-style: italic;
+	margin-top: $padding-mobile;
+	text-align: center;
+}
+@media screen and (min-width: $screen-sm-min) {
+	.alignleft {
+		float: left !important;
+		margin: 0 0.5em 0.5em 0 !important;
+	}
+	.alignright {
+		float: right !important;
+		margin: 0 0 0.5em 0.5em !important;
+	}
+}

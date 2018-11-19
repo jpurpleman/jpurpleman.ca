@@ -1,0 +1,57 @@
+@import '_vars';
+@import '_mixins';
+@import 'fa/_font-awesome';
+
+article .more-link {
+	left: auto;
+	right: 15px;
+}
+blockquote {
+	border-left: 0;
+	border-right: 3px solid $color-primary;
+	@include border-radius($border-radius-base 0 0 $border-radius-base);
+}
+footer .article-meta {
+	li {
+		padding-left: 0;
+		padding-right: 24px;
+	}
+	
+	.fa {
+		left: auto;
+		right: 0;
+	}
+}
+
+.rational-widgets {
+	.widget {
+		&.widget_archive, &.widget_calendar, &.widget_categories,
+		&.widget_meta, &.widget_pages, &.widget_recent_comments,
+		&.widget_recent_entries, &.widget_rss, &.widget_search,
+		&.widget_text, &.widget_tag_cloud, &.widget_nav_menu,
+		&.widget_subpages {
+			h4:before {
+				@include fa-icon;
+				margin-left: 8px;
+				margin-right: 0;
+			}
+		}
+		&.widget_categories {
+			.children {
+				a {
+					padding-left: 0;
+					padding-right: $padding-mobile;
+				}
+			}
+			.popularity {
+				left: auto;
+				right: 0;
+			}
+		}
+		&.widget_pages, &.widget_nav_menu, &.widget_subpages {
+			.children, .sub-menu {
+				padding-right: $padding-mobile;
+			}
+		}
+	}
+}

@@ -1,0 +1,61 @@
+.modal {
+	background-color: $white-base;
+	@include border-radius($border-radius-base);
+	@include box-sizing;
+	height: 90%;
+	left: 5%;
+	padding: $padding 0;
+	position: fixed;
+	top: 100%;
+	@include transition(transform 0.25s, top 0.25s);
+	width: 90%;
+	z-index: 3;
+	
+	&.visible {
+		top: 5%;
+	}
+	
+	h3 {
+		margin-top: 0;
+	}
+}
+.modal-close {
+	@include border-radius(0 $border-radius-base 0 0);
+	//height: 36px;
+	line-height: 36px;
+	right: 0;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	width: 36px;
+}
+.modal-frame {
+	@include box-sizing;
+	max-height: 100%;
+	overflow: auto;
+	padding: 0 $padding;
+}
+.overlay {
+	background-color: rgba(0,0,0,0.75);
+	display: none;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 2;
+}
+
+@media screen and (min-width: $screen-sm-min) {
+	.modal {
+		left: 50%;
+		height: auto;
+		@include transform(translate(-50%, 0));
+		width: 300px;
+		
+		&.visible {
+			top: 50%;		
+			@include transform(translate(-50%, -50%));
+		}
+	}
+}

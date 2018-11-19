@@ -1,0 +1,164 @@
+// Colors
+$white-base: #fff;
+$white-dark: darken($white-base, 5%);
+$opaque-05: rgba(0,0,0,0.05);
+$opaque-10: rgba(0,0,0,0.1);
+$opaque-15: rgba(0,0,0,0.15);
+$text-base: #333;
+$text-light: lighten($text-base, 25%);
+
+$color-primary:         #246D9F;
+$color-success:         #2ecc71;
+$color-info:            #1abc9c;
+$color-warning:         #e67e22;
+$color-danger:          #c0392b;
+$color-note:			#fffccb;
+
+$gray-base:              #000;
+$gray-darker:            lighten($gray-base, 13.5%);
+$gray-dark:              lighten($gray-base, 20%);
+$gray:                   lighten($gray-base, 33.5%);
+$gray-light:             lighten($gray-base, 46.7%);
+$gray-lighter:           lighten($gray-base, 93.5%);
+
+$link-color:            $color-primary;
+$link-hover-color:      darken($link-color, 15%);
+$link-hover-decoration: underline;
+
+$black-opaque-border: rgba(0,0,0,0.05);
+
+// Fonts
+$sans: 'Raleway', sans-serif;
+$mono: 'Inconsolata', monospace;
+$btn-font: 'Source Sans Pro', sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.375;
+
+$font-size-large:         ceil(($font-size-base * 1.25));
+$font-size-small:         ceil(($font-size-base * 0.85));
+
+$line-height-base:        1.428571429; // 20/14
+$line-height-computed:    floor(($font-size-base * $line-height-base)); // ~20px
+
+$line-height-large:         1.2533333; // extra decimals for Win 8.1 Chrome
+$line-height-small:         1.5;
+
+// Buttons
+$padding-base-vertical: 6px;
+$padding-base-horizontal: 12px;
+
+$padding-large-vertical: ceil(($padding-base-vertical * 1.25));
+$padding-large-horizontal: ceil(($padding-base-horizontal * 1.25));
+
+$border-radius-base:		4px;
+$border-radius-large:       6px;
+$border-radius-small:       3px;
+
+$cursor-disabled: not-allowed;
+
+$btn-font-weight:                normal;
+
+$btn-default-color:              #333;
+$btn-default-bg:                 #fff;
+$btn-default-border:             #ccc;
+
+$btn-primary-color:              #fff;
+$btn-primary-bg:                 $color-primary;
+$btn-primary-border:             darken($btn-primary-bg, 5%);
+
+$btn-success-color:              #fff;
+$btn-success-bg:                 $color-success;
+$btn-success-border:             darken($btn-success-bg, 5%);
+
+$btn-info-color:                 #fff;
+$btn-info-bg:                    $color-info;
+$btn-info-border:                darken($btn-info-bg, 5%);
+
+$btn-warning-color:              #fff;
+$btn-warning-bg:                 $color-warning;
+$btn-warning-border:             darken($btn-warning-bg, 5%);
+
+$btn-danger-color:               #fff;
+$btn-danger-bg:                  $color-danger;
+$btn-danger-border:              darken($btn-danger-bg, 5%);
+
+$btn-note-color:				#6e6a23;
+$btn-note-bg:					$color-note;
+$btn-note-border:				darken($color-note, 5%);
+
+$btn-link-disabled-color:        $gray-light;
+
+// Grid
+$grid-columns:		12;
+$grid-gutter-width:	30px;
+$screen-iphone-max:	480px;
+$screen-sm-min:		768px !default;
+$screen-md-min:		992px !default;
+$screen-ipad-max:	1024px;
+$screen-lg-min:		1200px !default;
+$container-sm:		(720px + $grid-gutter-width) !default;
+$container-md:		(940px + $grid-gutter-width) !default;
+$container-lg:		(1140px + $grid-gutter-width) !default;
+
+// Elements
+$padding: 30px;
+$padding-mobile: ( $padding / 2 );
+$margin-negative: ( - $padding );
+$margin-negative-mobile: ( $padding / -2 );
+
+$padding-base-vertical:     6px;
+$padding-base-horizontal:   12px;
+
+$padding-large-vertical:    10px;
+$padding-large-horizontal:  16px;
+
+$padding-small-vertical:    5px;
+$padding-small-horizontal:  10px;
+
+$padding-xs-vertical:       1px;
+$padding-xs-horizontal:     5px;
+
+// Social Media
+$twitter: #55acee;
+$facebook: #3b5998;
+$pinterest: #cc2127;
+$linkedin: #0976b4;
+$google: #db4437;
+$tumblr: #35465c;
+
+// Alerts
+$state-success-text:             #3c763d;
+$state-success-bg:               #dff0d8;
+$state-success-border:           darken(adjust-hue($state-success-bg, -10), 5%);
+
+$state-info-text:                #31708f;
+$state-info-bg:                  #d9edf7;
+$state-info-border:              darken(adjust-hue($state-info-bg, -10), 7%);
+
+$state-warning-text:             #8a6d3b;
+$state-warning-bg:               #fcf8e3;
+$state-warning-border:           darken(adjust-hue($state-warning-bg, -10), 5%);
+
+$state-danger-text:              #a94442;
+$state-danger-bg:                #f2dede;
+$state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%);
+
+$alert-padding:               15px;
+$alert-border-radius:         $border-radius-base;
+$alert-link-font-weight:      bold;
+
+$alert-success-bg:            $state-success-bg;
+$alert-success-text:          $state-success-text;
+$alert-success-border:        $state-success-border;
+
+$alert-info-bg:               $state-info-bg;
+$alert-info-text:             $state-info-text;
+$alert-info-border:           $state-info-border;
+
+$alert-warning-bg:            $state-warning-bg;
+$alert-warning-text:          $state-warning-text;
+$alert-warning-border:        $state-warning-border;
+
+$alert-danger-bg:             $state-danger-bg;
+$alert-danger-text:           $state-danger-text;
+$alert-danger-border:         $state-danger-border;

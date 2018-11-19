@@ -1,0 +1,251 @@
+article {
+	background: $white-base;
+	@include cf;
+	margin-top: $padding-mobile;
+	padding: 0 $padding-mobile ( ( 44px + 40px ) + $padding-mobile );
+	position: relative;
+	
+	// types
+	&.sticky {
+		background-color: $color-note;
+		@include box-shadow(0 6px 5px -5px rgba(0,0,0,0.2));
+	}
+
+	nav {
+		&.extras {
+			border-top: 1px solid $black-opaque-border;
+			bottom: 0;
+			font-family: $mono;
+			left: 0;
+			position: absolute;
+			text-align: center;
+			width: 100%;
+			
+			a, button {
+				border: solid $black-opaque-border;
+				border-width: 0 1px 0 0;
+				display: inline-block;
+				line-height: 21px;
+				padding: $padding-base-horizontal;
+				
+				&:nth-child(1) {
+					border-left: 1px solid $black-opaque-border;
+				}				
+				&:focus {
+					background-color: $opaque-05;
+					outline: none;
+				}
+				&.active, &:active {
+					background-color: $opaque-05;
+					@include box-shadow(none);
+					
+					&:focus {
+						background-color: $opaque-10;
+						outline: none;
+					}
+				}
+			}
+			
+			.share {
+				background-color: transparent;
+				display: none;
+				margin: 0 -4px;
+			}
+		}
+		&.subpages {
+			display: none;
+		}
+	}
+
+	.more-link {
+		bottom: 40px + $padding-mobile;
+		display: inline-block;
+		left: $padding-mobile;
+		padding: $padding-large-vertical $padding-large-horizontal;
+		position: absolute;
+	}
+}
+@media screen and (min-width: $screen-sm-min) {
+	article nav.subpages {
+		display: block;
+		float: right;
+		font-size: 0.85em;
+		margin-top: 15px;
+		
+		a, li {
+			display: inline-block;
+		}
+		a {
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+	}
+}
+
+body {
+	&.single {
+		article {
+			padding-bottom: ( 40px + $padding-mobile );
+		}
+		
+		.comments-area article {
+			padding-bottom: 0;
+		}
+	}
+}
+
+.post-navigation {
+	@include cf;
+	
+	a {
+		@include btn;
+		@include button-variant($btn-default-bg, $btn-default-color, $btn-default-color);
+		display: block;
+		margin-top: $padding-mobile;
+		padding-left: 35px;
+		position: relative;
+		text-align: left;
+		white-space: normal;
+		width: 100%;
+		
+		i {
+			left: 0;
+			position: absolute;
+			top: 50%;
+			@include transform(translateY(-50%));
+			text-align: center;
+			width: 35px;
+		}
+	}
+	
+	.nav-next {
+		a {
+			padding-left: 0;
+			padding-right: 35px;
+			text-align: right;
+			
+			i {
+				left: auto;
+				right: 0;
+			}
+		}
+	}
+}
+@media screen and (min-width: $screen-ipad-max) {
+	.post-navigation {
+		a {
+			float: left;
+			width: 49%;
+		}
+		
+		.nav-next a {
+			float: right;
+		}
+	}
+}
+.post-password-form input {
+	display: inline-block;
+}
+.post-thumbnail {
+	background: no-repeat scroll 50% 50%;
+	@include background-size;
+	margin: 0 $margin-negative-mobile;
+	overflow: hidden;
+	padding-top: 52%;
+	position: relative;
+	
+	a {
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+}
+.sidebar {
+	margin-top: $padding-mobile;
+}
+.social-share {
+	a {
+		background: $color-primary;
+		@include border-radius($border-radius-base);
+		color: $white-base;
+		margin-bottom: 5px;
+		padding-left: $padding-mobile;
+		padding-right: $padding-mobile;
+		text-align: center;
+		text-indent: -(20px + $padding-mobile);
+		
+		&:before {
+			content: $fa-var-share-alt;
+ 			@include fa-icon;
+			float: left;
+			line-height: 20px;
+			margin-right: $padding-mobile;
+			text-align: center;
+			text-indent: 0;
+			width: 20px;
+		}
+		
+		&.twitter {
+			background-color: $twitter;
+			color: $white-base;
+			
+			&:before {
+				content: $fa-var-twitter;
+			}
+		}
+		&.facebook {
+			background-color: $facebook;
+			color: $white-base;
+			
+			&:before {
+				content: $fa-var-facebook;
+			}
+		}
+		&.pinterest {
+			background-color: $pinterest;
+			color: $white-base;
+			
+			&:before {
+				content: $fa-var-pinterest;
+			}
+		}
+		&.linkedin {
+			background-color: $linkedin;
+			color: $white-base;
+			
+			&:before {
+				content: $fa-var-linkedin;
+			}
+		}
+		&.google {
+			background-color: $google;
+			color: $white-base;
+			
+			&:before {
+				content: $fa-var-google;
+			}
+		}
+		&.tumblr {
+			background-color: $tumblr;
+			color: $white-base;
+			
+			&:before {
+				content: $fa-var-tumblr;
+			}
+		}
+	}
+}
+.video-wrapper, .jetpack-video-wrapper {
+	padding-top: 56.25%;
+	position: relative;
+	
+	embed, iframe, object, .video-player {
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+}

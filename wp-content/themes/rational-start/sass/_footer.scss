@@ -1,0 +1,61 @@
+footer {
+	&.article {
+		color: $text-light;
+		font-size: $font-size-small;
+		margin: $padding-mobile 0;
+		
+		&.negative-margin {
+			margin-top: $margin-negative-mobile;
+		}
+	}
+	&.site {
+		background-color: $gray-base;
+		color: $gray-lighter;
+		font-size: $font-size-small;
+		margin-top: $padding-mobile;
+		
+		a {
+			color: lighten($color-primary, 10%);
+		}
+		input, select, textarea {
+			&:focus {
+				color: $white-base;
+			}
+		}
+
+		.btn-primary {
+			background-color: lighten($color-primary, 10%);
+		}
+		.rational-widgets .widget.widget_categories .popularity {
+			background: rgba(255,255,255,0.2);
+		}
+	}
+	
+	.article-meta {
+		line-height: $line-height-base;
+		
+		li {
+			margin-bottom: 5px;
+			padding-left: 24px;
+			position: relative;
+		}
+		
+		.fa {
+			left: 0;
+			position: absolute;
+			top: 2px;
+		}
+	}
+}
+
+.back-to-top {
+	bottom: -36px;
+	position: fixed;
+	right: $padding-mobile;
+	@include transition(bottom 0.25s);
+	z-index: 1;
+	
+	&.headroom--pinned {
+		bottom: $padding-mobile;
+	}
+}

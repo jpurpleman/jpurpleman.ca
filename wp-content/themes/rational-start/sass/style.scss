@@ -1,0 +1,32 @@
+/*!
+Theme Name: Rational Start
+Theme URI: http://jeremyhixon.com/rational-theme/
+Author: Jeremy Hixon
+Author URI: http://jeremyhixon.com
+Description: A minimal, clean, legible start to your site.
+Version: 1.0.8
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-menu, editor-style, featured-images, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, custom-background
+Text Domain: rational-start
+*/
+@import '_vars';
+@import '_mixins';
+@import '_normalize';
+@import '_grid';
+@import '_forms';
+@import '_buttons';
+@import '_alerts';
+@import '_helpers';
+@import '_base';
+@import 'fa/_font-awesome';
+@import '_header';
+@import '_content';
+@import '_comments';
+@import '_pagination';
+@import '_tables';
+@import '_footer';
+@import '_modal';
+@import '_gallery';
+@import '_widgets';
+@import '_wordpress';
